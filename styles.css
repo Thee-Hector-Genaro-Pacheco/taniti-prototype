@@ -1,0 +1,1561 @@
+/* ==========================================================================
+   Visit Taniti Island - Official Tourism Guide & Travel Prototype
+   Course: WGU D479 User Experience Design Task 1 & 2
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & Global CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Color Palette */
+  --color-ocean-dark: #0A364A;
+  --color-ocean-deep: #062432;
+  --color-primary: #0284C7;
+  --color-primary-hover: #0369A1;
+  --color-primary-light: #E0F2FE;
+  
+  --color-emerald: #059669;
+  --color-emerald-dark: #065F46;
+  --color-emerald-light: #D1FAE5;
+  
+  --color-amber: #D97706;
+  --color-amber-light: #FEF3C7;
+  
+  --color-volcano: #EA580C;
+  --color-volcano-light: #FFEDD5;
+
+  /* Neutrals & Surfaces */
+  --color-bg-page: #F8FAFC;
+  --color-bg-card: #FFFFFF;
+  --color-bg-alt: #F1F5F9;
+  --color-border: #E2E8F0;
+  --color-border-dark: #CBD5E1;
+  
+  /* Typography Colors (Ensuring High Contrast WCAG AAA/AA) */
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --color-text-light: #64748B;
+  --color-text-inverse: #FFFFFF;
+  
+  /* Typography Scale */
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Radii & Shadows */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.09), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --header-height: 72px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base Reset & Typography
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 2rem);
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-page);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Focus Visible for Accessibility */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Layout Utilities
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.section {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.bg-light {
+  background-color: var(--color-bg-alt);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-emerald-dark);
+  background-color: var(--color-emerald-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-ocean-dark);
+  line-height: 1.25;
+  margin-bottom: var(--space-sm);
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   4. Prototype Top Banner
+   -------------------------------------------------------------------------- */
+.prototype-banner {
+  background-color: #1E293B;
+  color: #F8FAFC;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.badge-notice {
+  background-color: var(--color-amber);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   5. Site Header & Primary Navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-ocean-dark);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.primary-nav .nav-list {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.primary-nav .nav-link {
+  display: inline-block;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.primary-nav .nav-link:hover {
+  color: var(--color-ocean-dark);
+  background-color: var(--color-bg-alt);
+}
+
+.primary-nav .nav-link.active {
+  color: var(--color-primary-hover);
+  background-color: var(--color-primary-light);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-alt);
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-ocean-dark);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   6. Buttons & Interactive Controls
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.25;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  color: #FFFFFF;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(2, 132, 199, 0.3);
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--color-ocean-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-ocean-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Section 1: Home
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #062432 0%, #0E4E6D 60%, #155E75 100%);
+  color: #FFFFFF;
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #2DD4BF;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: #FFFFFF;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #E2E8F0;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Quick Facts Card */
+.quick-facts-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.fact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #FFFFFF;
+}
+
+.fact-icon {
+  font-size: 1.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.fact-item strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.fact-item span {
+  font-size: 0.875rem;
+  color: #CBD5E1;
+}
+
+/* Home Portal Navigation Cards */
+.home-portal-block {
+  margin-top: 1rem;
+}
+
+.home-portal-block .section-title {
+  color: #FFFFFF;
+}
+
+.home-portal-block .section-subtitle {
+  color: #CBD5E1;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.portal-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--color-border);
+}
+
+.portal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.portal-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.portal-icon-wrapper svg {
+  width: 26px;
+  height: 26px;
+}
+
+.portal-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-ocean-dark);
+  margin-bottom: 0.75rem;
+}
+
+.portal-card-desc {
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.portal-link {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Section 2: Things to Do (Filtering & Activity Grid)
+   -------------------------------------------------------------------------- */
+.filter-container {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.filter-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-ocean-dark);
+}
+
+.filter-count {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  background-color: var(--color-bg-alt);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.filter-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn, .lodging-filter-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover, .lodging-filter-btn:hover {
+  background-color: #E2E8F0;
+  color: var(--color-ocean-dark);
+}
+
+.filter-btn.active, .lodging-filter-btn.active {
+  background-color: var(--color-ocean-dark);
+  color: #FFFFFF;
+  border-color: var(--color-ocean-dark);
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.activity-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Activity Card Visual Banners */
+.activity-card-image-placeholder {
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Beautiful Stylized Gradients representing attractions */
+.img-rainforest {
+  background: linear-gradient(135deg, #064E3B 0%, #047857 50%, #10B981 100%);
+}
+
+.img-volcano {
+  background: linear-gradient(135deg, #7C2D12 0%, #C2410C 50%, #EA580C 100%);
+}
+
+.img-beaches {
+  background: linear-gradient(135deg, #0369A1 0%, #0284C7 50%, #38BDF8 100%);
+}
+
+.img-snorkeling {
+  background: linear-gradient(135deg, #0F766E 0%, #0D9488 50%, #2DD4BF 100%);
+}
+
+.img-zipline {
+  background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #60A5FA 100%);
+}
+
+.img-fishing {
+  background: linear-gradient(135deg, #1E293B 0%, #334155 50%, #475569 100%);
+}
+
+.img-helicopter {
+  background: linear-gradient(135deg, #3730A3 0%, #4F46E5 50%, #818CF8 100%);
+}
+
+.img-museum {
+  background: linear-gradient(135deg, #78350F 0%, #92400E 50%, #B45309 100%);
+}
+
+.img-art {
+  background: linear-gradient(135deg, #831843 0%, #BE185D 50%, #F472B6 100%);
+}
+
+.img-harbor {
+  background: linear-gradient(135deg, #115E59 0%, #14B8A6 50%, #5EEAD4 100%);
+}
+
+.card-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-ocean-dark);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.card-badge.nature {
+  background-color: var(--color-emerald-light);
+  color: var(--color-emerald-dark);
+  border: 1px solid var(--color-emerald);
+}
+
+.card-badge.adventure {
+  background-color: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #F59E0B;
+}
+
+.card-badge.sightseeing {
+  background-color: #E0E7FF;
+  color: #3730A3;
+  border: 1px solid #818CF8;
+}
+
+.card-duration {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.activity-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.activity-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-ocean-dark);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.activity-summary {
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.activity-highlights {
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.activity-highlights li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.activity-highlights li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.activity-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------------------------------------
+   9. Section 3: Places to Stay
+   -------------------------------------------------------------------------- */
+.lodging-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.lodging-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lodging-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Special styling for Large Four-Star Resort (Usability Task 3 Target) */
+.featured-resort-card {
+  border: 2px solid var(--color-primary);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+  box-shadow: var(--shadow-md);
+}
+
+.lodging-badge-ribbon {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.lodging-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-right: 6rem;
+}
+
+.lodging-type-tag {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.resort-tag {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-hover);
+}
+
+.hotel-tag {
+  background-color: #E0E7FF;
+  color: #3730A3;
+}
+
+.bnb-tag {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.hostel-tag {
+  background-color: var(--color-emerald-light);
+  color: var(--color-emerald-dark);
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #F59E0B;
+  font-size: 1rem;
+}
+
+.rating-text {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+}
+
+.lodging-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-ocean-dark);
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.lodging-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.lodging-description {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.lodging-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.amenity-chip {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.lodging-price-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+}
+
+.price-amount {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-ocean-dark);
+}
+
+.price-amount small {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   10. Section 4: Getting Around
+   -------------------------------------------------------------------------- */
+.transit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.transit-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Special styling for Public Buses (Usability Task 4 Target) */
+.highlighted-transit {
+  grid-column: span 3;
+  border: 2px solid var(--color-emerald);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0FDF4 100%);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.transit-icon-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.highlighted-transit .transit-icon-badge {
+  width: 72px;
+  height: 72px;
+  background-color: var(--color-emerald-light);
+  color: var(--color-emerald-dark);
+  margin-bottom: 0;
+}
+
+.transit-icon-badge svg {
+  width: 28px;
+  height: 28px;
+}
+
+.highlighted-transit .transit-icon-badge svg {
+  width: 36px;
+  height: 36px;
+}
+
+.transit-badge-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-emerald-dark);
+  background-color: var(--color-emerald-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5rem;
+}
+
+.transit-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-ocean-dark);
+  margin-bottom: 0.75rem;
+}
+
+/* High-Visibility Callout for Bus Hours (Usability Task 4) */
+.schedule-callout-box {
+  background-color: #ECFDF5;
+  border-left: 5px solid var(--color-emerald);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-bottom: 1.25rem;
+}
+
+.callout-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-emerald-dark);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.operating-hours-highlight {
+  font-size: 1.15rem;
+  color: #064E3B;
+  line-height: 1.4;
+}
+
+.operating-hours-highlight strong {
+  font-weight: 800;
+}
+
+.transit-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.transit-spec-list {
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   11. Section 5: Visitor Information / FAQ
+   -------------------------------------------------------------------------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.info-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Special styling for Currency Card (Usability Task 5 Target) */
+.highlighted-info-card {
+  grid-column: span 2;
+  border: 2px solid var(--color-primary);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+  box-shadow: var(--shadow-md);
+}
+
+.info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.info-card-icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlighted-info-card .info-card-icon {
+  background-color: var(--color-primary-light);
+}
+
+.info-category-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-primary-hover);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.15rem;
+}
+
+.info-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-ocean-dark);
+}
+
+/* Currency Callout Box (Usability Task 5) */
+.currency-fact-box {
+  background-color: #E0F2FE;
+  border-left: 5px solid var(--color-primary);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-bottom: 1.25rem;
+}
+
+.currency-primary-statement {
+  font-size: 1.2rem;
+  color: #0369A1;
+  line-height: 1.4;
+}
+
+.info-list {
+  list-style: none;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  line-height: 1.55;
+}
+
+.info-list li {
+  position: relative;
+  padding-left: 1.35rem;
+}
+
+.info-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--color-emerald);
+  font-size: 0.85rem;
+}
+
+.warning-callout {
+  background-color: #FEF3C7;
+  border-left: 4px solid var(--color-amber);
+  padding: 0.75rem 1rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: #92400E;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. Accessible Modals & Dialogs (Usability Task 1 Target)
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+  opacity: 0;
+}
+
+.modal-dialog {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  animation: modalEnter 0.25s ease-out;
+}
+
+.modal-sm {
+  max-width: 480px;
+}
+
+@keyframes modalEnter {
+  from {
+    transform: translateY(16px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-emerald-dark);
+  background-color: var(--color-emerald-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.35rem;
+}
+
+.modal-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-ocean-dark);
+  line-height: 1.25;
+}
+
+.modal-close-btn {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-text-light);
+  padding: 0.25rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  color: var(--color-ocean-dark);
+}
+
+.modal-body {
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modal-feature-box {
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  border-left: 4px solid var(--color-emerald);
+}
+
+.modal-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-ocean-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.spec-card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+}
+
+.spec-name {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-text-light);
+  letter-spacing: 0.05em;
+}
+
+.spec-value {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-ocean-dark);
+  margin-top: 0.2rem;
+}
+
+.modal-itinerary-list {
+  padding-left: 1.25rem;
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-bullet-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  background-color: var(--color-bg-page);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+/* --------------------------------------------------------------------------
+   13. Site Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-ocean-deep);
+  color: #CBD5E1;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand .brand-title {
+  color: #FFFFFF;
+}
+
+.footer-brand .brand-subtitle {
+  color: #2DD4BF;
+}
+
+.footer-tagline {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: #94A3B8;
+  max-width: 360px;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.03em;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-links a {
+  color: #CBD5E1;
+  font-size: 0.925rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.task-links a {
+  color: #38BDF8;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  font-size: 0.8125rem;
+  color: #64748B;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .portal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .activity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .transit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlighted-transit {
+    grid-column: span 2;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .primary-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+    padding: 1rem;
+    display: none;
+  }
+
+  .primary-nav.is-open {
+    display: block;
+  }
+
+  .primary-nav .nav-list {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .primary-nav .nav-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+
+  .portal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lodging-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlighted-transit {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlighted-info-card {
+    grid-column: span 1;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+}

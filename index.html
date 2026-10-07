@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official visitor guide for Taniti Island. Explore beaches, tropical rainforest, the small active volcano, lodging options, island transportation, and essential visitor information.">
+  <title>Visit Taniti Island | Visitor Guide & Travel Information</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Prototype Banner -->
+  <aside class="prototype-banner" role="complementary" aria-label="Prototype Notice">
+    <div class="banner-inner container">
+      <span class="badge-notice">UX Prototype</span>
+      <p>WGU D479 Usability Prototype. All interactive actions are simulated demonstrations for coursework.</p>
+    </div>
+  </aside>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner container">
+      <a href="#home" class="brand-logo" aria-label="Taniti Island Tourism Home">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" fill="#0E7490" />
+          <path d="M16 6C11.5 12 8 16 8 20a8 8 0 0 0 16 0c0-4-3.5-8-8-14Z" fill="#F0FDFA" />
+          <path d="M16 11c-2.5 3.5-5 6.5-5 9a5 5 0 0 0 10 0c0-2.5-2.5-5.5-5-9Z" fill="#2DD4BF" />
+          <circle cx="21" cy="9" r="3" fill="#FBBF24" />
+        </svg>
+        <span class="brand-text">
+          <span class="brand-title">Visit Taniti</span>
+          <span class="brand-subtitle">Island Visitor Guide</span>
+        </span>
+      </a>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Primary Information Architecture Navigation -->
+      <nav id="primary-navigation" class="primary-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+          <li><a href="#things-to-do" class="nav-link" data-section="things-to-do">Things to Do</a></li>
+          <li><a href="#places-to-stay" class="nav-link" data-section="places-to-stay">Places to Stay</a></li>
+          <li><a href="#getting-around" class="nav-link" data-section="getting-around">Getting Around</a></li>
+          <li><a href="#visitor-info" class="nav-link" data-section="visitor-info">Visitor Information</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================================================ -->
+    <!-- SECTION 1: HOME -->
+    <!-- ============================================================ -->
+    <section id="home" class="section hero-section" aria-labelledby="home-hero-title">
+      <div class="hero-backdrop" aria-hidden="true">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-text-block">
+          <span class="hero-eyebrow">Welcome to Taniti</span>
+          <h1 id="home-hero-title" class="hero-title">Explore the Tropical Island of Taniti</h1>
+          <p class="hero-description">
+            Taniti is a small, tropical island in the Pacific. While the island has an area of less than 500 square miles, the terrain is varied and includes both white and yellow sand beaches, a large, predominantly-flat harbor, a small active volcano, and an interior of lush, tropical rainforest.
+          </p>
+          <div class="hero-actions">
+            <a href="#things-to-do" class="btn btn-primary" id="hero-btn-explore">Explore Things to Do</a>
+            <a href="#places-to-stay" class="btn btn-secondary" id="hero-btn-lodging">Find Places to Stay</a>
+          </div>
+        </div>
+
+        <!-- Quick Facts Bar -->
+        <div class="quick-facts-card" aria-label="Taniti Island Overview">
+          <div class="fact-item">
+            <span class="fact-icon" aria-hidden="true">🌴</span>
+            <div>
+              <strong>Terrain & Size</strong>
+              <span>Less than 500 sq miles; beaches, rainforest, volcano</span>
+            </div>
+          </div>
+          <div class="fact-item">
+            <span class="fact-icon" aria-hidden="true">👥</span>
+            <div>
+              <strong>Island Population</strong>
+              <span>Approximately 20,000 residents</span>
+            </div>
+          </div>
+          <div class="fact-item">
+            <span class="fact-icon" aria-hidden="true">💵</span>
+            <div>
+              <strong>Currency</strong>
+              <span>U.S. dollar (euros, yen & credit cards also accepted)</span>
+            </div>
+          </div>
+          <div class="fact-item">
+            <span class="fact-icon" aria-hidden="true">🚌</span>
+            <div>
+              <strong>Public Buses</strong>
+              <span>5 a.m. to 11 p.m. every day in Taniti City</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home Hub / Navigation Cards -->
+      <div class="container home-portal-block">
+        <div class="section-header text-center">
+          <h2 class="section-title">Explore Taniti by Category</h2>
+          <p class="section-subtitle">Navigate through the primary sections to find activities, lodging, transportation, and visitor information.</p>
+        </div>
+        <div class="portal-grid">
+          <article class="portal-card">
+            <div class="portal-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+            </div>
+            <h3 class="portal-card-title">Things to Do</h3>
+            <p class="portal-card-desc">Enjoy the beaches, explore the lush tropical rainforest, visit the small active volcano, or take part in tours and cultural activities.</p>
+            <a href="#things-to-do" class="portal-link" aria-label="Browse Things to Do on Taniti">
+              View Things to Do <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <article class="portal-card">
+            <div class="portal-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+            </div>
+            <h3 class="portal-card-title">Places to Stay</h3>
+            <p class="portal-card-desc">Review Taniti's wide variety of lodging, including an inexpensive hostel, family-owned hotels, bed and breakfasts, and a large four-star resort.</p>
+            <a href="#places-to-stay" class="portal-link" aria-label="Browse Places to Stay on Taniti">
+              View Places to Stay <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <article class="portal-card">
+            <div class="portal-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16M8 15h.01M16 15h.01M6 19v2M18 19v2"/></svg>
+            </div>
+            <h3 class="portal-card-title">Getting Around</h3>
+            <p class="portal-card-desc">Find details on public buses in Taniti City (5 a.m. to 11 p.m. every day), private buses, taxis, rental cars, bicycle rentals, and walking.</p>
+            <a href="#getting-around" class="portal-link" aria-label="View Transportation Options on Taniti">
+              View Transportation <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <article class="portal-card">
+            <div class="portal-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </div>
+            <h3 class="portal-card-title">Visitor Information</h3>
+            <p class="portal-card-desc">Learn about currency (U.S. dollar), 120-volt electrical outlets, spoken languages, medical services, safety, holiday closures, and alcohol regulations.</p>
+            <a href="#visitor-info" class="portal-link" aria-label="Read Essential Visitor Information and FAQs">
+              View Visitor Information <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: THINGS TO DO -->
+    <!-- ============================================================ -->
+    <section id="things-to-do" class="section bg-light" aria-labelledby="things-to-do-title">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="section-tag">Island Activities</span>
+          <h2 id="things-to-do-title" class="section-title">Things to Do</h2>
+          <p class="section-subtitle">
+            Most people come to Taniti to enjoy the beaches, explore the rainforest, or visit the active volcano. Other popular activities include tours, water sports, and cultural attractions.
+          </p>
+        </header>
+
+        <!-- Activities Filter Controls (Crucial for Usability Task 2) -->
+        <div class="filter-container" role="region" aria-label="Activity Categories Filter">
+          <div class="filter-heading-group">
+            <span class="filter-label" id="filter-label-desc">Filter activities:</span>
+            <span class="filter-count" id="activity-count" aria-live="polite">Showing 10 activities</span>
+          </div>
+          <div class="filter-button-group" role="group" aria-labelledby="filter-label-desc">
+            <button type="button" class="filter-btn active" data-filter="all" id="filter-all" aria-pressed="true">
+              All Activities
+            </button>
+            <button type="button" class="filter-btn" data-filter="nature" id="filter-nature" aria-pressed="false">
+              🌿 Nature
+            </button>
+            <button type="button" class="filter-btn" data-filter="adventure" id="filter-adventure" aria-pressed="false">
+              ⚡ Adventure
+            </button>
+            <button type="button" class="filter-btn" data-filter="sightseeing" id="filter-sightseeing" aria-pressed="false">
+              🎨 Culture & Sightseeing
+            </button>
+          </div>
+        </div>
+
+        <!-- Activities Grid -->
+        <div class="activity-grid" id="activity-cards-grid">
+
+          <!-- 1. Rainforest (Usability Task 1 Target) -->
+          <article class="activity-card" data-category="nature" id="activity-card-rainforest">
+            <div class="activity-card-image-placeholder img-rainforest" role="img" aria-label="Lush tropical rainforest canopy on Taniti">
+              <span class="card-badge nature">Nature</span>
+              <span class="card-duration">Popular Activity</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title" id="rainforest-title">Rainforest</h3>
+              <p class="activity-summary">
+                Taniti features an interior of lush, tropical rainforest. Exploring the rainforest through hiking trails and scenic walks is one of the island's primary attractions.
+              </p>
+              <ul class="activity-highlights">
+                <li>Lush tropical rainforest terrain</li>
+                <li>Rainforest hiking trails and nature walks</li>
+                <li>Zip-lining available in the rainforest area</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-primary btn-sm btn-open-modal" 
+                  id="btn-rainforest-details" 
+                  data-target-modal="modal-rainforest"
+                  aria-haspopup="dialog"
+                  aria-controls="modal-rainforest">
+                  Open Rainforest Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Active Volcano (Usability Task 2 Target) -->
+          <article class="activity-card" data-category="nature" id="activity-card-volcano">
+            <div class="activity-card-image-placeholder img-volcano" role="img" aria-label="Small active volcano on Taniti">
+              <span class="card-badge nature">Nature</span>
+              <span class="card-duration">Popular Activity</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title" id="volcano-title">Active Volcano</h3>
+              <p class="activity-summary">
+                Taniti has a small active volcano. Visiting the active volcano is one of the most popular tourist activities on the island.
+              </p>
+              <ul class="activity-highlights">
+                <li>Small active volcano feature</li>
+                <li>Popular visitor sightseeing destination</li>
+                <li>Scenic volcanic landscape views</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-volcano-details" 
+                  data-target-modal="modal-volcano"
+                  aria-haspopup="dialog"
+                  aria-controls="modal-volcano">
+                  View Volcano Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Beaches -->
+          <article class="activity-card" data-category="nature" id="activity-card-beaches">
+            <div class="activity-card-image-placeholder img-beaches" role="img" aria-label="White and yellow sand beaches on Taniti">
+              <span class="card-badge nature">Nature</span>
+              <span class="card-duration">Popular Activity</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title">Beaches</h3>
+              <p class="activity-summary">
+                Taniti features both white and yellow sand beaches. Most visitors come to the island to spend time relaxing and enjoying the beaches.
+              </p>
+              <ul class="activity-highlights">
+                <li>White and yellow sand beach shores</li>
+                <li>Scenic coastal scenery</li>
+                <li>Swimming and coastal relaxation</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-beaches-details" 
+                  data-target-modal="modal-generic"
+                  data-generic-title="Taniti Beaches"
+                  data-generic-desc="Taniti has both white and yellow sand beaches along its varied coastline. Enjoying the beaches is one of the most popular activities for visitors."
+                  aria-haspopup="dialog">
+                  View Beach Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Snorkeling -->
+          <article class="activity-card" data-category="nature adventure" id="activity-card-snorkeling">
+            <div class="activity-card-image-placeholder img-snorkeling" role="img" aria-label="Snorkeling in clear waters around Taniti">
+              <span class="card-badge nature">Nature</span>
+              <span class="card-duration">Activity</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title">Snorkeling</h3>
+              <p class="activity-summary">
+                Snorkeling is a popular recreational activity along Taniti's coastal waters, allowing visitors to view marine life and underwater terrain.
+              </p>
+              <ul class="activity-highlights">
+                <li>Coastal water exploration</li>
+                <li>Popular island water activity</li>
+                <li>Recreational snorkeling opportunities</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-snorkeling-details" 
+                  data-target-modal="modal-generic"
+                  data-generic-title="Snorkeling"
+                  data-generic-desc="Snorkeling is one of the popular recreational activities available to visitors on Taniti."
+                  aria-haspopup="dialog">
+                  View Snorkel Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Zip-lining -->
+          <article class="activity-card" data-category="adventure" id="activity-card-zipline">
+            <div class="activity-card-image-placeholder img-zipline" role="img" aria-label="Zip-lining through the rainforest canopy on Taniti">
+              <span class="card-badge adventure">Adventure</span>
+              <span class="card-duration">Activity</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title">Zip-Lining</h3>
+              <p class="activity-summary">
+                Zip-lining in the rainforest is an adventurous way to experience Taniti's lush canopy from above.
+              </p>
+              <ul class="activity-highlights">
+                <li>Zip-lining in the tropical rainforest</li>
+                <li>Outdoor adventure experience</li>
+                <li>Canopy-level island perspectives</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-zipline-details" 
+                  data-target-modal="modal-generic"
+                  data-generic-title="Zip-Lining in the Rainforest"
+                  data-generic-desc="Visitors can enjoy zip-lining in the rainforest as an exciting outdoor activity on Taniti."
+                  aria-haspopup="dialog">
+                  View Zip-Line Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Fishing Tours -->
+          <article class="activity-card" data-category="adventure" id="activity-card-fishing">
+            <div class="activity-card-image-placeholder img-fishing" role="img" aria-label="Chartered fishing boat on the water">
+              <span class="card-badge adventure">Adventure</span>
+              <span class="card-duration">Tour</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title">Chartered Fishing Tours</h3>
+              <p class="activity-summary">
+                Chartered fishing tours are available for visitors looking to spend time out on the water surrounding Taniti.
+              </p>
+              <ul class="activity-highlights">
+                <li>Chartered boat fishing excursions</li>
+                <li>Departures near island waters and harbor</li>
+                <li>Popular maritime activity for tourists</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-fishing-details" 
+                  data-target-modal="modal-generic"
+                  data-generic-title="Chartered Fishing Tours"
+                  data-generic-desc="Chartered fishing tours are available as one of the organized outdoor activities for visitors to Taniti."
+                  aria-haspopup="dialog">
+                  View Fishing Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Helicopter Rides -->
+          <article class="activity-card" data-category="sightseeing adventure" id="activity-card-helicopter">
+            <div class="activity-card-image-placeholder img-helicopter" role="img" aria-label="Helicopter flight over island scenery">
+              <span class="card-badge sightseeing">Sightseeing</span>
+              <span class="card-duration">Tour</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title">Helicopter Rides</h3>
+              <p class="activity-summary">
+                Helicopter rides offer scenic aerial views of Taniti's varied terrain, including the coastline, rainforest, and active volcano.
+              </p>
+              <ul class="activity-highlights">
+                <li>Aerial sightseeing of the island</li>
+                <li>Views of beaches, rainforest, and volcano</li>
+                <li>Popular scenic tour option</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-helicopter-details" 
+                  data-target-modal="modal-generic"
+                  data-generic-title="Helicopter Rides"
+                  data-generic-desc="Helicopter rides provide aerial sightseeing tours across Taniti's varied topography."
+                  aria-haspopup="dialog">
+                  View Flight Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Museum -->
+          <article class="activity-card" data-category="sightseeing" id="activity-card-museum">
+            <div class="activity-card-image-placeholder img-museum" role="img" aria-label="Local history museum on Taniti">
+              <span class="card-badge sightseeing">Culture</span>
+              <span class="card-duration">Attraction</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title">Local History Museum</h3>
+              <p class="activity-summary">
+                Taniti's local history museum offers visitors insight into the island's historical background, heritage, and culture.
+              </p>
+              <ul class="activity-highlights">
+                <li>Island history and cultural heritage</li>
+                <li>Educational exhibits for all ages</li>
+                <li>Convenient cultural activity</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-museum-details" 
+                  data-target-modal="modal-generic"
+                  data-generic-title="Local History Museum"
+                  data-generic-desc="Visitors can explore a local history museum to learn about Taniti's history and heritage."
+                  aria-haspopup="dialog">
+                  View Museum Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Art Galleries -->
+          <article class="activity-card" data-category="sightseeing" id="activity-card-art">
+            <div class="activity-card-image-placeholder img-art" role="img" aria-label="Art galleries and local artwork on Taniti">
+              <span class="card-badge sightseeing">Culture</span>
+              <span class="card-duration">Attraction</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title">Art Galleries</h3>
+              <p class="activity-summary">
+                Exploring local art galleries gives visitors an opportunity to view artwork, crafts, and creative work by local artists.
+              </p>
+              <ul class="activity-highlights">
+                <li>Local art and artisan exhibitions</li>
+                <li>Cultural exploration in Taniti</li>
+                <li>Unique regional creative works</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-art-details" 
+                  data-target-modal="modal-generic"
+                  data-generic-title="Art Galleries"
+                  data-generic-desc="Visitors can explore local art galleries featuring artistic works and crafts."
+                  aria-haspopup="dialog">
+                  View Gallery Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Harbor Sightseeing -->
+          <article class="activity-card" data-category="sightseeing" id="activity-card-harbor">
+            <div class="activity-card-image-placeholder img-harbor" role="img" aria-label="Large predominantly flat harbor on Taniti">
+              <span class="card-badge sightseeing">Sightseeing</span>
+              <span class="card-duration">Attraction</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-title">Harbor & Town Sightseeing</h3>
+              <p class="activity-summary">
+                Taniti has a large, predominantly-flat harbor where visitors can walk, sightsee, and visit local family-owned restaurants and shops.
+              </p>
+              <ul class="activity-highlights">
+                <li>Large, predominantly-flat harbor area</li>
+                <li>Walkable waterfront surroundings</li>
+                <li>Local dining and shopping nearby</li>
+              </ul>
+              <div class="activity-card-footer">
+                <button 
+                  type="button" 
+                  class="btn btn-outline btn-sm btn-open-modal" 
+                  id="btn-harbor-details" 
+                  data-target-modal="modal-generic"
+                  data-generic-title="Harbor & Town Sightseeing"
+                  data-generic-desc="Taniti has a large, predominantly-flat harbor with walkable areas and local restaurants."
+                  aria-haspopup="dialog">
+                  View Harbor Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: PLACES TO STAY -->
+    <!-- ============================================================ -->
+    <section id="places-to-stay" class="section" aria-labelledby="places-to-stay-title">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="section-tag">Lodging Options</span>
+          <h2 id="places-to-stay-title" class="section-title">Places to Stay</h2>
+          <p class="section-subtitle">
+            Taniti has a wide variety of lodging, ranging from an inexpensive hostel to several family-owned hotels, bed and breakfasts, and a large four-star resort.
+          </p>
+        </header>
+
+        <!-- Lodging Filter / Category Nav -->
+        <div class="filter-container" role="region" aria-label="Lodging Category Filter">
+          <div class="filter-heading-group">
+            <span class="filter-label">Filter lodging options:</span>
+            <span class="filter-count" id="lodging-count" aria-live="polite">Showing 4 accommodation categories</span>
+          </div>
+          <div class="filter-button-group" role="group" aria-label="Lodging Filter Options">
+            <button type="button" class="lodging-filter-btn active" data-lodging="all" id="lodging-filter-all" aria-pressed="true">
+              All Accommodations
+            </button>
+            <button type="button" class="lodging-filter-btn" data-lodging="resort" id="lodging-filter-resort" aria-pressed="false">
+              ⭐ Four-Star Resort
+            </button>
+            <button type="button" class="lodging-filter-btn" data-lodging="hotel" id="lodging-filter-hotel" aria-pressed="false">
+              🏨 Family-Owned Hotels
+            </button>
+            <button type="button" class="lodging-filter-btn" data-lodging="bnb" id="lodging-filter-bnb" aria-pressed="false">
+              ☕ Bed and Breakfasts
+            </button>
+            <button type="button" class="lodging-filter-btn" data-lodging="hostel" id="lodging-filter-hostel" aria-pressed="false">
+              🎒 Inexpensive Hostel
+            </button>
+          </div>
+        </div>
+
+        <!-- Lodging Cards Grid -->
+        <div class="lodging-grid" id="lodging-cards-grid">
+
+          <!-- 1. Large Four-Star Resort (Usability Task 3 Target) -->
+          <article class="lodging-card featured-resort-card" data-lodging-type="resort" id="lodging-card-resort">
+            <div class="lodging-badge-ribbon">Resort Option</div>
+            <div class="lodging-card-header">
+              <div class="lodging-type-tag resort-tag">Four-Star Resort</div>
+              <div class="star-rating" aria-label="Rating: Four-star category">
+                <span aria-hidden="true">★★★★☆</span>
+                <span class="rating-text">Four-Star Accommodations</span>
+              </div>
+            </div>
+            <div class="lodging-card-body">
+              <h3 class="lodging-title" id="resort-title">Four-Star Resort</h3>
+              <p class="lodging-location">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                Taniti Island
+              </p>
+              <p class="lodging-description">
+                Taniti offers a large four-star resort for visitors seeking full-scale resort lodging and guest amenities on the island.
+              </p>
+              <div class="lodging-amenities">
+                <span class="amenity-chip">✓ Four-Star Rating</span>
+                <span class="amenity-chip">✓ Large Resort Property</span>
+                <span class="amenity-chip">✓ Full Lodging Services</span>
+              </div>
+              <div class="lodging-price-bar">
+                <div class="price-info">
+                  <span class="price-label">Category</span>
+                  <span class="price-amount">Resort Lodging</span>
+                </div>
+                <button type="button" class="btn btn-primary btn-prototype-action" data-title="Four-Star Resort" id="btn-inquire-resort">
+                  Simulate Lodging Inquiry
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Family-Owned Hotels -->
+          <article class="lodging-card" data-lodging-type="hotel" id="lodging-card-family-hotel">
+            <div class="lodging-card-header">
+              <div class="lodging-type-tag hotel-tag">Family-Owned Hotels</div>
+              <div class="star-rating" aria-label="Lodging Category">
+                <span class="rating-text">Hotel Accommodations</span>
+              </div>
+            </div>
+            <div class="lodging-card-body">
+              <h3 class="lodging-title">Family-Owned Hotels</h3>
+              <p class="lodging-location">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                Taniti Island
+              </p>
+              <p class="lodging-description">
+                Taniti has several family-owned hotels offering comfortable accommodations and local hospitality for travelers.
+              </p>
+              <div class="lodging-amenities">
+                <span class="amenity-chip">✓ Family-Owned Properties</span>
+                <span class="amenity-chip">✓ Hotel Accommodations</span>
+                <span class="amenity-chip">✓ Island Locations</span>
+              </div>
+              <div class="lodging-price-bar">
+                <div class="price-info">
+                  <span class="price-label">Category</span>
+                  <span class="price-amount">Hotel Lodging</span>
+                </div>
+                <button type="button" class="btn btn-outline btn-prototype-action" data-title="Family-Owned Hotels" id="btn-inquire-hotel">
+                  Simulate Lodging Inquiry
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Bed and Breakfasts -->
+          <article class="lodging-card" data-lodging-type="bnb" id="lodging-card-bnb">
+            <div class="lodging-card-header">
+              <div class="lodging-type-tag bnb-tag">Bed and Breakfasts</div>
+              <div class="star-rating" aria-label="Lodging Category">
+                <span class="rating-text">B&B Accommodations</span>
+              </div>
+            </div>
+            <div class="lodging-card-body">
+              <h3 class="lodging-title">Bed and Breakfasts</h3>
+              <p class="lodging-location">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                Taniti Island
+              </p>
+              <p class="lodging-description">
+                Bed and breakfast options on Taniti provide cozy accommodations and breakfast for guests visiting the island.
+              </p>
+              <div class="lodging-amenities">
+                <span class="amenity-chip">✓ Bed and Breakfast Properties</span>
+                <span class="amenity-chip">✓ Morning Breakfast</span>
+                <span class="amenity-chip">✓ Welcoming Atmosphere</span>
+              </div>
+              <div class="lodging-price-bar">
+                <div class="price-info">
+                  <span class="price-label">Category</span>
+                  <span class="price-amount">B&B Lodging</span>
+                </div>
+                <button type="button" class="btn btn-outline btn-prototype-action" data-title="Bed and Breakfasts" id="btn-inquire-bnb">
+                  Simulate Lodging Inquiry
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Inexpensive Hostel -->
+          <article class="lodging-card" data-lodging-type="hostel" id="lodging-card-hostel">
+            <div class="lodging-card-header">
+              <div class="lodging-type-tag hostel-tag">Inexpensive Hostel</div>
+              <div class="star-rating" aria-label="Lodging Category">
+                <span class="rating-text">Hostel Accommodations</span>
+              </div>
+            </div>
+            <div class="lodging-card-body">
+              <h3 class="lodging-title">Inexpensive Hostel</h3>
+              <p class="lodging-location">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                Taniti Island
+              </p>
+              <p class="lodging-description">
+                An inexpensive hostel provides budget-friendly accommodations for travelers visiting Taniti.
+              </p>
+              <div class="lodging-amenities">
+                <span class="amenity-chip">✓ Inexpensive Hostel Option</span>
+                <span class="amenity-chip">✓ Budget-Conscious Lodging</span>
+                <span class="amenity-chip">✓ Island Access</span>
+              </div>
+              <div class="lodging-price-bar">
+                <div class="price-info">
+                  <span class="price-label">Category</span>
+                  <span class="price-amount">Hostel Lodging</span>
+                </div>
+                <button type="button" class="btn btn-outline btn-prototype-action" data-title="Inexpensive Hostel" id="btn-inquire-hostel">
+                  Simulate Lodging Inquiry
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: GETTING AROUND -->
+    <!-- ============================================================ -->
+    <section id="getting-around" class="section bg-light" aria-labelledby="getting-around-title">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="section-tag">Island Transportation</span>
+          <h2 id="getting-around-title" class="section-title">Getting Around</h2>
+          <p class="section-subtitle">
+            Visitors have several transportation choices when traveling across Taniti and exploring Taniti City.
+          </p>
+        </header>
+
+        <!-- Transit Options Grid -->
+        <div class="transit-grid">
+
+          <!-- 1. Public Buses (Usability Task 4 Target) -->
+          <article class="transit-card highlighted-transit" id="transit-public-buses">
+            <div class="transit-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16M8 15h.01M16 15h.01M6 19v2M18 19v2"/></svg>
+            </div>
+            <div class="transit-card-body">
+              <div class="transit-badge-pill">Public Transit</div>
+              <h3 class="transit-card-title">Public Buses</h3>
+              
+              <!-- Direct Usability Task 4 Operating Hours Callout -->
+              <div class="schedule-callout-box" id="public-bus-hours-box">
+                <span class="callout-label">Operating Schedule:</span>
+                <p class="operating-hours-highlight">
+                  <strong>Public buses serve Taniti City and run from 5 a.m. to 11 p.m. every day.</strong>
+                </p>
+              </div>
+
+              <p class="transit-desc">
+                Public buses provide regular daily service throughout Taniti City during official operating hours.
+              </p>
+              <ul class="transit-spec-list">
+                <li><strong>Coverage:</strong> Public buses serve Taniti City</li>
+                <li><strong>Hours:</strong> 5 a.m. to 11 p.m. every day</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 2. Private Buses -->
+          <article class="transit-card" id="transit-private-buses">
+            <div class="transit-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            </div>
+            <div class="transit-card-body">
+              <div class="transit-badge-pill">Island Transit</div>
+              <h3 class="transit-card-title">Private Buses</h3>
+              <p class="transit-desc">
+                Private buses serve the rest of the island outside of Taniti City, offering transportation across other island areas.
+              </p>
+              <ul class="transit-spec-list">
+                <li><strong>Coverage:</strong> Serves the rest of the island</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 3. Taxis -->
+          <article class="transit-card" id="transit-taxis">
+            <div class="transit-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H7.5a1 1 0 0 0-.8.4L4 11l-5.16.86a1 1 0 0 0-.84.99V16h3m14 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-10 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
+            </div>
+            <div class="transit-card-body">
+              <div class="transit-badge-pill">Taxi Service</div>
+              <h3 class="transit-card-title">Taxis</h3>
+              <p class="transit-desc">
+                Taxis are available in Taniti City for direct point-to-point transportation.
+              </p>
+              <ul class="transit-spec-list">
+                <li><strong>Availability:</strong> Available in Taniti City</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 4. Rental Cars -->
+          <article class="transit-card" id="transit-rental-cars">
+            <div class="transit-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 12l2-6h10l2 6M6 12v5M18 12v5"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            </div>
+            <div class="transit-card-body">
+              <div class="transit-badge-pill">Car Rental</div>
+              <h3 class="transit-card-title">Rental Cars</h3>
+              <p class="transit-desc">
+                Rental cars are available near the airport for visitors who wish to drive themselves while on Taniti.
+              </p>
+              <ul class="transit-spec-list">
+                <li><strong>Location:</strong> Available near the airport</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 5. Bicycle Rentals -->
+          <article class="transit-card" id="transit-bicycles">
+            <div class="transit-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5L15 6h3M12 17.5 9 12h4l2 5.5M5.5 17.5 9 12"/></svg>
+            </div>
+            <div class="transit-card-body">
+              <div class="transit-badge-pill">Bicycle Rentals</div>
+              <h3 class="transit-card-title">Bicycle Rentals</h3>
+              <p class="transit-desc">
+                Many visitors rent bicycles to get around the island and explore local areas.
+              </p>
+              <ul class="transit-spec-list">
+                <li><strong>Popularity:</strong> Many visitors rent bicycles</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 6. Walking -->
+          <article class="transit-card" id="transit-walking">
+            <div class="transit-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4a2 2 0 1 0-4 0 2 2 0 0 0 4 0zm-2 4-2 6 3 2 1 6m-1-12 3 3 2 9"/></svg>
+            </div>
+            <div class="transit-card-body">
+              <div class="transit-badge-pill">Walking</div>
+              <h3 class="transit-card-title">Walking</h3>
+              <p class="transit-desc">
+                Taniti City is fairly flat and very walkable, making pedestrian travel convenient for exploring shops, dining, and sights.
+              </p>
+              <ul class="transit-spec-list">
+                <li><strong>Terrain:</strong> Taniti City is fairly flat and very walkable</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: VISITOR INFORMATION / FAQ -->
+    <!-- ============================================================ -->
+    <section id="visitor-info" class="section" aria-labelledby="visitor-info-title">
+      <div class="container">
+        <header class="section-header text-center">
+          <span class="section-tag">Essential FAQs</span>
+          <h2 id="visitor-info-title" class="section-title">Visitor Information</h2>
+          <p class="section-subtitle">
+            Frequently requested information about currency, electrical outlets, languages, medical facilities, safety, holiday closures, and alcohol regulations on Taniti.
+          </p>
+        </header>
+
+        <!-- Information Cards Grid -->
+        <div class="info-grid">
+
+          <!-- 1. Currency & Payments (Usability Task 5 Target) -->
+          <article class="info-card highlighted-info-card" id="info-card-currency">
+            <div class="info-card-header">
+              <div class="info-card-icon" aria-hidden="true">💵</div>
+              <div>
+                <span class="info-category-tag">Frequently Requested Info</span>
+                <h3 class="info-card-title" id="currency-heading">Currency</h3>
+              </div>
+            </div>
+            <div class="info-card-body">
+              <div class="currency-fact-box" id="currency-info-box">
+                <p class="currency-primary-statement">
+                  <strong>Taniti uses the U.S. dollar as its currency. Many businesses also accept euros and yen, and many businesses accept major credit cards.</strong>
+                </p>
+              </div>
+              <ul class="info-list">
+                <li>Taniti uses the U.S. dollar as its currency.</li>
+                <li>Many businesses also accept euros and yen.</li>
+                <li>Many businesses accept major credit cards.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 2. Electrical Outlets -->
+          <article class="info-card" id="info-card-electrical">
+            <div class="info-card-header">
+              <div class="info-card-icon" aria-hidden="true">🔌</div>
+              <div>
+                <span class="info-category-tag">Electrical Standards</span>
+                <h3 class="info-card-title">Electrical Outlets</h3>
+              </div>
+            </div>
+            <div class="info-card-body">
+              <p>
+                Taniti uses <strong>120-volt electrical outlets</strong> (the same as in the United States).
+              </p>
+              <ul class="info-list">
+                <li>120-volt electrical outlets are standard across the island.</li>
+                <li>Devices standard in the United States plug directly into Taniti outlets.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 3. Language Information -->
+          <article class="info-card" id="info-card-language">
+            <div class="info-card-header">
+              <div class="info-card-icon" aria-hidden="true">🗣️</div>
+              <div>
+                <span class="info-category-tag">Communication</span>
+                <h3 class="info-card-title">Language</h3>
+              </div>
+            </div>
+            <div class="info-card-body">
+              <p>
+                Many Tanitians speak <strong>English</strong>, which is taught in schools, although <strong>Tanitian</strong> is also spoken.
+              </p>
+              <ul class="info-list">
+                <li>English is taught in schools and spoken by many Tanitians.</li>
+                <li>Tanitian is also spoken on the island.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 4. Hospitals & Medical Clinics -->
+          <article class="info-card" id="info-card-medical">
+            <div class="info-card-header">
+              <div class="info-card-icon" aria-hidden="true">🏥</div>
+              <div>
+                <span class="info-category-tag">Medical Services</span>
+                <h3 class="info-card-title">Medical Facilities</h3>
+              </div>
+            </div>
+            <div class="info-card-body">
+              <p>
+                Taniti has one hospital and several clinics. The hospital has English-speaking staff.
+              </p>
+              <ul class="info-list">
+                <li>One hospital is located on the island.</li>
+                <li>The hospital has English-speaking staff.</li>
+                <li>Several clinics provide additional medical care.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 5. Safety & Crime -->
+          <article class="info-card" id="info-card-safety">
+            <div class="info-card-header">
+              <div class="info-card-icon" aria-hidden="true">🛡️</div>
+              <div>
+                <span class="info-category-tag">Safety Information</span>
+                <h3 class="info-card-title">Safety and Crime</h3>
+              </div>
+            </div>
+            <div class="info-card-body">
+              <p>
+                Violent crime is rare on Taniti, but petty crime like pickpocketing does occur.
+              </p>
+              <ul class="info-list">
+                <li>Violent crime is rare on Taniti.</li>
+                <li>Petty crime like pickpocketing does occur; visitors should take standard precautions.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 6. National Holiday Closures -->
+          <article class="info-card" id="info-card-holidays">
+            <div class="info-card-header">
+              <div class="info-card-icon" aria-hidden="true">📅</div>
+              <div>
+                <span class="info-category-tag">Holiday Information</span>
+                <h3 class="info-card-title">National Holidays</h3>
+              </div>
+            </div>
+            <div class="info-card-body">
+              <p class="warning-callout">
+                Many businesses close on national holidays, so visitors should plan accordingly.
+              </p>
+              <ul class="info-list">
+                <li>Business closures occur during national holidays.</li>
+                <li>Visitors should plan ahead for services during holiday dates.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 7. Drinking Age & Alcohol Hours -->
+          <article class="info-card" id="info-card-alcohol">
+            <div class="info-card-header">
+              <div class="info-card-icon" aria-hidden="true">🍹</div>
+              <div>
+                <span class="info-category-tag">Regulations</span>
+                <h3 class="info-card-title">Drinking Age and Alcohol Regulations</h3>
+              </div>
+            </div>
+            <div class="info-card-body">
+              <p>
+                The legal drinking age on Taniti is <strong>21</strong>. Alcohol is not served or sold between the hours of <strong>midnight and 9:00 a.m.</strong>
+              </p>
+              <ul class="info-list">
+                <li>Legal drinking age is 21.</li>
+                <li>Alcohol is not served or sold between midnight and 9:00 a.m.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- ACCESSIBLE MODALS / DIALOGS -->
+  <!-- ============================================================ -->
+
+  <!-- Modal 1: Rainforest Exploration Details (USABILITY TASK 1 TARGET) -->
+  <div class="modal-overlay" id="modal-rainforest" role="dialog" aria-modal="true" aria-labelledby="modal-rainforest-title" hidden>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge">Nature Activity</span>
+          <h2 class="modal-title" id="modal-rainforest-title">Rainforest Activity Details</h2>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close Rainforest Details Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-feature-box">
+          <p><strong>About the Rainforest:</strong> Taniti has lush tropical rainforests in the island's interior. Hiking and zip-lining in the rainforest are available activities for visitors.</p>
+        </div>
+
+        <h3 class="modal-section-title">Rainforest Activities</h3>
+        <ul class="modal-bullet-list">
+          <li><strong>Rainforest Hiking:</strong> Exploring the lush tropical rainforest on foot is one of the most popular activities on Taniti.</li>
+          <li><strong>Zip-Lining:</strong> Zip-lining in the rainforest is available for visitors seeking an active canopy experience.</li>
+        </ul>
+
+        <div class="modal-feature-box" style="margin-top: 1.5rem; border-left-color: var(--color-primary);">
+          <p><strong>Prototype Notice:</strong> This activity details view and reservation inquiry feature are part of the WGU D479 usability prototype. All actions are simulated demonstrations.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-prototype-action" data-title="Rainforest Activity">
+          Simulate Reservation Inquiry
+        </button>
+        <button type="button" class="btn btn-secondary" data-close-modal>
+          Close Details
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Active Volcano Details (USABILITY TASK 2 TARGET) -->
+  <div class="modal-overlay" id="modal-volcano" role="dialog" aria-modal="true" aria-labelledby="modal-volcano-title" hidden>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge">Nature Activity</span>
+          <h2 class="modal-title" id="modal-volcano-title">Active Volcano Details</h2>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close Volcano Details Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-feature-box">
+          <p><strong>About the Active Volcano:</strong> Taniti has a small active volcano. Visiting the active volcano is one of the island's most popular tourist activities.</p>
+        </div>
+        <div class="modal-feature-box" style="margin-top: 1.5rem; border-left-color: var(--color-primary);">
+          <p><strong>Prototype Notice:</strong> This view is part of the WGU D479 usability prototype. All inquiries are simulated demonstrations.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-prototype-action" data-title="Active Volcano Visit">
+          Simulate Reservation Inquiry
+        </button>
+        <button type="button" class="btn btn-secondary" data-close-modal>
+          Close Details
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Generic Activity Details Modal -->
+  <div class="modal-overlay" id="modal-generic" role="dialog" aria-modal="true" aria-labelledby="modal-generic-title" hidden>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge">Island Activity</span>
+          <h2 class="modal-title" id="modal-generic-title">Activity Information</h2>
+        </div>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close Details Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-feature-box">
+          <p id="modal-generic-body-text">Taniti offers a variety of activities for visitors.</p>
+        </div>
+        <div class="modal-feature-box" style="margin-top: 1.5rem; border-left-color: var(--color-primary);">
+          <p><strong>Prototype Notice:</strong> This activity view is part of the WGU D479 usability prototype. All inquiries are simulated demonstrations.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-prototype-action" id="btn-generic-inquire" data-title="Island Activity">
+          Simulate Reservation Inquiry
+        </button>
+        <button type="button" class="btn btn-secondary" data-close-modal>
+          Close Details
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Prototype Action Notice -->
+  <div class="modal-overlay" id="modal-prototype-notice" role="dialog" aria-modal="true" aria-labelledby="prototype-notice-title" hidden>
+    <div class="modal-dialog modal-sm">
+      <div class="modal-header">
+        <h2 class="modal-title" id="prototype-notice-title">Prototype Demonstration</h2>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close Notice">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="prototype-feedback-message">
+          You selected an inquiry action. This is an academic usability prototype for WGU D479. No external booking provider is integrated, and no real reservation is processed.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-close-modal>
+          Understood
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-text">
+          <span class="brand-title">Visit Taniti</span>
+          <span class="brand-subtitle">Taniti Island Visitor Guide</span>
+        </div>
+        <p class="footer-tagline">
+          Visitor guide prototype developed for WGU D479 User Experience Design.
+        </p>
+      </div>
+
+      <div class="footer-nav-block">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#things-to-do">Things to Do</a></li>
+          <li><a href="#places-to-stay">Places to Stay</a></li>
+          <li><a href="#getting-around">Getting Around</a></li>
+          <li><a href="#visitor-info">Visitor Information</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-block">
+        <h4 class="footer-heading">Usability Tasks Reference</h4>
+        <ul class="footer-links task-links">
+          <li><a href="#things-to-do">Task 1: Open Rainforest Details</a></li>
+          <li><a href="#things-to-do">Task 2: Filter Nature & Identify Active Volcano</a></li>
+          <li><a href="#places-to-stay">Task 3: Locate Four-Star Resort</a></li>
+          <li><a href="#getting-around">Task 4: Public Bus Hours (5 a.m. to 11 p.m.)</a></li>
+          <li><a href="#visitor-info">Task 5: Currency Information (U.S. Dollar)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; Taniti Tourism Guide. Academic Usability Prototype for WGU D479 User Experience Design.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
